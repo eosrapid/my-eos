@@ -65,6 +65,9 @@ function overrideGen(config, env, libraryTarget, outFile) {
      */
     config.output.library = libraryName;
     config.output.libraryTarget = libraryTarget;
+    if(libraryTarget==="umd") {
+      config.output.libraryExport = "default";
+    }
     /**
      * Change the webpack entry and output path
      */

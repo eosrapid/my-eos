@@ -25,4 +25,5 @@ function MyEOS(options={}){
   myEOSInstance.containerElement = conElem;
   return myEOSInstance;
 }
-module.exports = MyEOS;
+export default MyEOS;
+export {MyEOS};
