@@ -113,7 +113,6 @@ console.log("Transaction Result: ", txResult);
   <meta name="viewport" content="width=device-width">
   <title>MyEOS Jungle Test Net Example</title>
   <link href="https://unpkg.com/my-eos@0.0.3/dist/my-eos.css" rel="stylesheet" />
-  
 </head>
 <body>
 <script type="text/javascript" src="https://unpkg.com/my-eos@0.0.3/dist/my-eos.umd.js"></script>
