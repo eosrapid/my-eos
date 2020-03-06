@@ -12,12 +12,12 @@
 ### HTML
 #### Add this to your header:
 ```html
-<link href="<todo add unpkg link>" rel="stylesheet" />
+<link href="https://unpkg.com/my-eos@0.0.3/dist/my-eos.css" rel="stylesheet" />
 ```
 
 #### Add this to the body of your html before all other scripts
 ```html
-<script type="text/javascript" src="<todo add unpkg link>"></script>
+<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.2/dist/my-eos.umd.js"></script>
 ```
 
 
@@ -100,6 +100,68 @@ const txResult = await myEOSInstance.transact(txObject, {
 });
 
 console.log("Transaction Result: ", txResult);
+```
+
+
+
+## Usage (Jungle Test Net, full html file)
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MyEOS Jungle Test Net Example</title>
+  <link href="https://unpkg.com/my-eos@0.0.3/dist/my-eos.css" rel="stylesheet" />
+  
+</head>
+<body>
+<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.3/dist/my-eos.umd.js"></script>
+<script type="text/javascript">
+const myEos = new MyEOS({
+  network: {
+    chainId: 'e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473',
+    host: 'api.jungle.alohaeos.com',
+    port: 443,
+    protocol: 'https'
+  },
+  scatterAppName: "Your app name here"
+});
+
+const loginResponse = myEos.login().then(()=>{
+  const authorization = myEOSInstance.getWallet().getAuthorizations()[0];
+  console.log("Your are logged in as "+authorization.actor+"@"+authorization.permission);
+
+  const txObject = {
+    actions: [{
+      account: 'eosio.token',
+      name: 'transfer',
+      authorization: [{
+        actor: auth.actor,
+        permission: auth.permission,
+      }],
+      data: {
+        from: auth.actor,
+        to: 'lioninjungle',
+        quantity: '0.0001 EOS',
+        memo: 'hello',
+      },
+    }]
+  };
+  return myEOSInstance.transact(txObject, {
+    blocksBehind: 3,
+    expireSeconds: 30,
+  });
+})
+.then((txResult)=>{
+  console.log("Transaction Result: ", txResult);
+})
+.catch((error)=>{
+  console.error("ERROR: ", error);
+});
+</script>
+</body>
+</html>
 ```
 
 # TODO:
