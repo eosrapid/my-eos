@@ -1,0 +1,11 @@
+.authSuccessWidget {
+  font-size: inherit;
+  text-align: center;
+  padding: 8px 4px 18px 4px;
+
+  :global {
+    .widgetMid {
+      text-align: center;
+    }
+  }
+}

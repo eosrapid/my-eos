@@ -1,0 +1,14 @@
+.meInput {
+  font-family: inherit;
+  font-size:16px;
+  padding:8px 6px;
+  outline:none;
+  border: 2px solid #333;
+  color:#333;
+  background:#fff;
+  &:focus {
+    color:#111;
+    border-color:#111;
+  }
+
+}

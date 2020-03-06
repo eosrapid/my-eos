@@ -1,0 +1,11 @@
+.txProcessingWidget {
+  font-size:inherit;
+  width:240px;
+  text-align: center;
+  height:300px;
+  :global {
+    span {
+      font-size:inherit;
+    }
+  }
+}

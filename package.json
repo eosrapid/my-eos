@@ -1,0 +1,62 @@
+{
+  "name": "my-eos",
+  "version": "0.0.1",
+  "description": "An easy to use library for sending EOS transactions",
+  "license": "MIT",
+  "repository": "eosrapid/my-eos",
+  "author": {
+    "name": "EOS Rapid",
+    "email": "rapid@eosrapid.com",
+    "url": "https://eosrapid.com"
+  },
+  "amdName": "MyEOS",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "source": "src/libEntryPoint.js",
+  "main": "dist/my-eos.commonjs.js",
+  "unpkg": "dist/my-eos.umd.js",
+  "devDependencies": {
+    "highland": "^2.13.4",
+    "level": "^4.0.0",
+    "node-sass": "^4.12.0",
+    "react-app-rewired": "^2.1.3",
+    "react-scripts": "^3.0.1",
+    "rimraf": "^3.0.2",
+    "sass-loader": "^7.1.0",
+    "standard-version": "^7.1.0",
+    "uglifyjs": "^2.4.11",
+    "uglifyjs-webpack-plugin": "^2.1.3",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "eosjs": "^20.0.3",
+    "preact": "^10.3.3",
+    "redux-zero": "^5.1.3",
+    "scatterjs-core": "^2.7.18",
+    "scatterjs-plugin-eosjs2": "^1.5.0"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "yarn run clean && yarn run build-commonjs && mkdir -p ./dist && cp ./build/my-eos.commonjs.js ./dist && yarn run build-umd && cp ./build/my-eos.umd.js ./dist && cp ./build/my-eos.css ./dist",
+    "build-commonjs": "NODE_ENV=production BUILD_TYPE=commonjs react-app-rewired build",
+    "build-umd": "NODE_ENV=production BUILD_TYPE=umd react-app-rewired build",
+    "build-demo": "NODE_ENV=production BUILD_TYPE=demo react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-app-rewired eject",
+    "clean": "rimraf dist",
+    "prebuild": "yarn run clean",
+    "prerelease": "yarn run build",
+    "release": "standard-version",
+    "minor": "yarn run release -- --release-as minor",
+    "postpublish": "git push origin master --follow-tags"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

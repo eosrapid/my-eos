@@ -1,0 +1,14 @@
+.privateKeyForm {
+  font-size:inherit;
+  padding:4px 12px;
+
+  width:100%;
+  display:block;
+  :global {
+    .ctrls {
+      width:100%;
+      display:block;
+      text-align: center;
+    }
+  }
+}

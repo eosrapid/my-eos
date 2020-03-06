@@ -1,0 +1,76 @@
+.meWidget {
+  /*
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  overflow: hidden;
+  background: #1E0E62;
+  text-align: left;
+  padding: 0px 0px 8px 0px;
+  margin: 0;
+  width: 300px;
+  margin-bottom: 10px;
+  border-radius: 10px;*/
+  position: relative;
+  top: 0;
+  left: 0;
+  min-width: 200px;
+  max-width: 98vw;
+  display: inline-block;
+  text-align: left;
+
+  :global {
+    .dbgText {
+      font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      text-align: center;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .myEOSTitle {
+      font-weight: 600;
+      color: white;
+    }
+
+    .widgetTop {
+      .widgetTitle {
+        text-align: center;
+        position: relative;
+        padding: 18px 20px;
+        line-height: 1;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #ccc;
+        text-transform: uppercase;
+      }
+    }
+
+    .widgetMid {
+      .widgetHint {
+        font-size: 12px;
+        text-align: center;
+        color: #ccc;
+      }
+    }
+
+    .widgetFooter {
+      width: 100%;
+      margin-top: 16px;
+
+      .widgetFooterControls {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-around;
+
+        height: 100%;
+        padding: 0;
+        margin: 4px 0px;
+
+      }
+    }
+  }
+}

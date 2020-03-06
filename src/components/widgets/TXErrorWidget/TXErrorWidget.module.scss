@@ -1,0 +1,9 @@
+.txErrorWidget {
+  font-size:inherit;
+
+  :global {
+    span {
+      font-size:inherit;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.authPrivateKeyWidget {
+  font-size:inherit;
+  width:300px;
+
+  :global {
+    span {
+      font-size:inherit;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.authLedgerWidget {
+  font-size: inherit;
+  text-align: center;
+
+  :global {
+    .ledgerInstructionsCon {
+      margin: 12px 0px;
+    }
+  }
+}

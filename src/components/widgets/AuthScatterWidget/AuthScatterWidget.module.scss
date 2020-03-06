@@ -1,0 +1,14 @@
+.authScatterWidget {
+  font-size: 14px;
+  padding: 10px 10px 12px 10px;
+  text-align: center;
+  width: 400px;
+
+  :global {
+    .scatterInstructionsCon {
+      margin: 18px 0px 18px 0px;
+    }
+  }
+
+
+}
