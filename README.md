@@ -61,6 +61,47 @@ const txResult = await myEOSInstance.transact(txObject, {
 console.log("Transaction Result: ", txResult);
 ```
 
+
+## Usage (Jungle Test Net)
+```javascript
+const myEos = new MyEOS({
+  network: {
+    chainId: 'e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473',
+    host: 'api.jungle.alohaeos.com',
+    port: 443,
+    protocol: 'https'
+  },
+  scatterAppName: "Your app name here"
+});
+
+const loginResponse = await myEos.login();
+const authorization = myEOSInstance.getWallet().getAuthorizations()[0];
+console.log("Your are logged in as "+authorization.actor+"@"+authorization.permission);
+
+const txObject = {
+  actions: [{
+    account: 'eosio.token',
+    name: 'transfer',
+    authorization: [{
+      actor: auth.actor,
+      permission: auth.permission,
+    }],
+    data: {
+      from: auth.actor,
+      to: 'lioninjungle',
+      quantity: '0.0001 EOS',
+      memo: 'hello',
+    },
+  }]
+};
+const txResult = await myEOSInstance.transact(txObject, {
+  blocksBehind: 3,
+  expireSeconds: 30,
+});
+
+console.log("Transaction Result: ", txResult);
+```
+
 # TODO:
 - Finish Documentation!
 - Finish Todo List!
