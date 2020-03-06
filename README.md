@@ -17,7 +17,7 @@
 
 #### Add this to the body of your html before all other scripts
 ```html
-<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.2/dist/my-eos.umd.js"></script>
+<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.3/dist/my-eos.umd.js"></script>
 ```
 
 
