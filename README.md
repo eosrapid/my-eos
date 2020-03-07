@@ -42,11 +42,11 @@ const txObject = {
     account: 'eosio.token',
     name: 'transfer',
     authorization: [{
-      actor: auth.actor,
-      permission: auth.permission,
+      actor: authorization.actor,
+      permission: authorization.permission,
     }],
     data: {
-      from: auth.actor,
+      from: authorization.actor,
       to: 'eosrapidprod',
       quantity: '0.0001 EOS',
       memo: 'hello',
@@ -83,11 +83,11 @@ const txObject = {
     account: 'eosio.token',
     name: 'transfer',
     authorization: [{
-      actor: auth.actor,
-      permission: auth.permission,
+      actor: authorization.actor,
+      permission: authorization.permission,
     }],
     data: {
-      from: auth.actor,
+      from: authorization.actor,
       to: 'lioninjungle',
       quantity: '0.0001 EOS',
       memo: 'hello',
@@ -136,11 +136,11 @@ const loginResponse = myEos.login().then(()=>{
       account: 'eosio.token',
       name: 'transfer',
       authorization: [{
-        actor: auth.actor,
-        permission: auth.permission,
+        actor: authorization.actor,
+        permission: authorization.permission,
       }],
       data: {
-        from: auth.actor,
+        from: authorization.actor,
         to: 'lioninjungle',
         quantity: '0.0001 EOS',
         memo: 'hello',
