@@ -12,12 +12,12 @@
 ### HTML
 #### Add this to your header:
 ```html
-<link href="https://unpkg.com/my-eos@0.0.3/dist/my-eos.css" rel="stylesheet" />
+<link href="https://unpkg.com/my-eos@0.0.5/dist/my-eos.css" rel="stylesheet" />
 ```
 
 #### Add this to the body of your html before all other scripts
 ```html
-<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.3/dist/my-eos.umd.js"></script>
+<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.5/dist/my-eos.umd.js"></script>
 ```
 
 
@@ -34,7 +34,7 @@ const myEos = new MyEOS({
 });
 
 const loginResponse = await myEos.login();
-const authorization = myEOSInstance.getWallet().getAuthorizations()[0];
+const authorization = myEos.getWallet().getAuthorizations()[0];
 console.log("Your are logged in as "+authorization.actor+"@"+authorization.permission);
 
 const txObject = {
@@ -53,7 +53,7 @@ const txObject = {
     },
   }]
 };
-const txResult = await myEOSInstance.transact(txObject, {
+const txResult = await myEos.transact(txObject, {
   blocksBehind: 3,
   expireSeconds: 30,
 });
@@ -75,7 +75,7 @@ const myEos = new MyEOS({
 });
 
 const loginResponse = await myEos.login();
-const authorization = myEOSInstance.getWallet().getAuthorizations()[0];
+const authorization = myEos.getWallet().getAuthorizations()[0];
 console.log("Your are logged in as "+authorization.actor+"@"+authorization.permission);
 
 const txObject = {
@@ -94,7 +94,7 @@ const txObject = {
     },
   }]
 };
-const txResult = await myEOSInstance.transact(txObject, {
+const txResult = await myEos.transact(txObject, {
   blocksBehind: 3,
   expireSeconds: 30,
 });
@@ -112,10 +112,10 @@ console.log("Transaction Result: ", txResult);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>MyEOS Jungle Test Net Example</title>
-  <link href="https://unpkg.com/my-eos@0.0.3/dist/my-eos.css" rel="stylesheet" />
+  <link href="https://unpkg.com/my-eos@0.0.5/dist/my-eos.css" rel="stylesheet" />
 </head>
 <body>
-<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.3/dist/my-eos.umd.js"></script>
+<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.5/dist/my-eos.umd.js"></script>
 <script type="text/javascript">
 const myEos = new MyEOS({
   network: {
@@ -128,7 +128,7 @@ const myEos = new MyEOS({
 });
 
 const loginResponse = myEos.login().then(()=>{
-  const authorization = myEOSInstance.getWallet().getAuthorizations()[0];
+  const authorization = myEos.getWallet().getAuthorizations()[0];
   console.log("Your are logged in as "+authorization.actor+"@"+authorization.permission);
 
   const txObject = {
@@ -147,7 +147,7 @@ const loginResponse = myEos.login().then(()=>{
       },
     }]
   };
-  return myEOSInstance.transact(txObject, {
+  return myEos.transact(txObject, {
     blocksBehind: 3,
     expireSeconds: 30,
   });
