@@ -15,7 +15,8 @@
     "src"
   ],
   "source": "src/libEntryPoint.js",
-  "main": "dist/my-eos.commonjs.js",
+  "commonjs": "dist/my-eos.commonjs.js",
+  "main": "dist/my-eos.umd.js",
   "unpkg": "dist/my-eos.umd.js",
   "devDependencies": {
     "highland": "^2.13.4",
