@@ -1,4 +1,6 @@
 import { Api, JsonRpc } from "eosjs";
+import { SerialBuffer } from 'eosjs/dist/eosjs-serialize';
+import {arrayToHex} from "@/utils/binary";
 
 import ScatterJS from "scatterjs-core";
 import ScatterEOS from "scatterjs-plugin-eosjs2";
@@ -138,6 +140,31 @@ class EOSWallet {
       throw err;
     })
   }
+  serializeAbi(abiObject) {
+    const fixedAbiObject = Object.assign({}, abiObject||{});
+    const tmpApi = new Api({
+      rpc: this.rpc,
+      signatureProvider: new JsSignatureProvider(['5HpMQTK5TTEhYvGFnJBx45HcNhNFyNrd53GpiBgu6zyRXxFSJAY']),
+      textDecoder: new TextDecoder(),
+      textEncoder: new TextEncoder(),
+    });
+    const abiDef = tmpApi.abiTypes.get('abi_def');
+    abiDef.fields.forEach((field)=>{
+      if(!fixedAbiObject.hasOwnProperty(field.name)){
+        fixedAbiObject[field.name] = [];
+      }
+    });
+    const serBuffer = new SerialBuffer({
+      textEncoder: tmpApi.textEncoder,
+      textDecoder: tmpApi.textDecoder,
+    });
+    abiDef.serialize(serBuffer, fixedAbiObject);
+    return serBuffer.asUint8Array();
+  }
+  serializeAbiToHex(abiObject) {
+    return arrayToHex(this.serializeAbi(abiObject));
+  }
+
 }
 
 export { EOSWallet };
