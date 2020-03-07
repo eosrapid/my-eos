@@ -12,12 +12,12 @@
 ### HTML
 #### Add this to your header:
 ```html
-<link href="https://unpkg.com/my-eos@0.0.5/dist/my-eos.css" rel="stylesheet" />
+<link href="https://unpkg.com/my-eos@0.0.7/dist/my-eos.css" rel="stylesheet" />
 ```
 
 #### Add this to the body of your html before all other scripts
 ```html
-<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.5/dist/my-eos.umd.js"></script>
+<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.7/dist/my-eos.umd.js"></script>
 ```
 
 
@@ -112,10 +112,10 @@ console.log("Transaction Result: ", txResult);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>MyEOS Jungle Test Net Example</title>
-  <link href="https://unpkg.com/my-eos@0.0.5/dist/my-eos.css" rel="stylesheet" />
+  <link href="https://unpkg.com/my-eos@0.0.7/dist/my-eos.css" rel="stylesheet" />
 </head>
 <body>
-<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.5/dist/my-eos.umd.js"></script>
+<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.7/dist/my-eos.umd.js"></script>
 <script type="text/javascript">
 const myEos = new MyEOS({
   network: {
