@@ -40,7 +40,6 @@ function getElementForModalId(modalId) {
 
 }
 const WidgetMain = ({ className, modalId, modalOpen, openModalData }) => {
-  console.log("modalId = " + modalId)
   const DisplayWidget = getElementForModalId(modalId);
   if (DisplayWidget === null || !modalOpen) {
     return <span style={{ display: "none", visibility: "hidden" }}></span>;

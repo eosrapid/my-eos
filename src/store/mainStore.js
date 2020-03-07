@@ -1,7 +1,4 @@
 import createStore from "redux-zero";
-import {
-  getConfigConst,
-} from '@/store';
 const initialState = {
   modalOpen: false,
   coreInstance: null,
@@ -9,6 +6,7 @@ const initialState = {
   modalId: "",
   debugText: "",
   scatterAppName: "MyEOS Widget Demo",
+  myEosTitle: "myEOS",
 }
 const store = createStore(initialState);
 

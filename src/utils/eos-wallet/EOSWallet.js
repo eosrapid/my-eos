@@ -1,9 +1,9 @@
 import { Api, JsonRpc } from "eosjs";
 import { SerialBuffer } from 'eosjs/dist/eosjs-serialize';
 import {arrayToHex} from "@/utils/binary";
+import ScatterJS from '@scatterjs/core';
+import ScatterEOS from '@scatterjs/eosjs2'
 
-import ScatterJS from "scatterjs-core";
-import ScatterEOS from "scatterjs-plugin-eosjs2";
 import { JsSignatureProvider } from "eosjs/dist/eosjs-jssig";
 import { SIG_PROVIDERS, WALLET_EVENTS, LOGOUT_TYPES } from "./defs";
 import EventManager from "../event-mgr";

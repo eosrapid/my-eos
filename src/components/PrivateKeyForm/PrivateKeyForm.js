@@ -9,7 +9,6 @@ const PrivateKeyForm = ({ className, onSubmit }) => {
   const [eosAcc, setEosAcc] = useState('');
   const [eosPerm, setEosPerm] = useState('active');
   const [privKey, setPrivKey] = useState('');
-  console.log("EOS ACC: ",eosAcc);
   return (
     <div className={classnames(privateKeyForm, className)}>
       <LabelInput

@@ -6,6 +6,15 @@ var hasElemInit = false;
 function MyEOS(options={}){
   if(typeof options.scatterAppName==='string') {
     boundActions.setScatterAppName(options.scatterAppName);
+    if(!options.appName) {
+      boundActions.setMyEosTitle(options.scatterAppName);
+    }
+  }
+  if(typeof options.appName==='string') {
+    boundActions.setMyEosTitle(options.appName);
+    if(!options.scatterAppName) {
+      boundActions.setScatterAppName(options.appName);
+    }
   }
   let conElem = options.container;
   if(!hasElemInit||options.forceReRender){

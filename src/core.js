@@ -25,7 +25,7 @@ class CoreMyEOS {
       boundActions.setOpenModal({modalId: "tx_success"});
     });
     this.wallet.eventManager.addListener(WALLET_EVENTS.TX_ERROR, ({error})=>{
-      boundActions.setOpenModal({modalId: "tx_error", openModalData:error+""});
+      boundActions.setOpenModal({modalId: "tx_error", openModalData:(error&&typeof error=='object'&&error.message)?error.message:(error+"")});
     });
 
   }
@@ -84,7 +84,7 @@ class CoreMyEOS {
       return r;
     })
     .catch(err=>{
-      boundActions.setOpenModal({modalId: "tx_error", openModalData: err+""})
+      boundActions.setOpenModal({modalId: "tx_error", openModalData: (err&&typeof err=='object'&&err.message)?err.message:(err+"")})
       throw err;
     })
   }

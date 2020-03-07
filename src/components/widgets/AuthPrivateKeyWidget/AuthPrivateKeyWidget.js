@@ -26,7 +26,7 @@ const AuthPrivateKeyWidget = ({ className, debugText, coreInstance, setOpenModal
         <PrivateKeyForm
           onSubmit={({actor, permission, privateKey})=>{
             coreInstance.wallet.loginWithPrivateKeys([privateKey], [actor+"@"+permission])
-            .then(() => console.log("login"))
+            .then(() => 1)
             .catch(err => {
               console.error(err);
 

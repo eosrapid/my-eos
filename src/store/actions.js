@@ -12,6 +12,12 @@ const reducers = (store) => ({
       scatterAppName: value,
     }
   },
+  setMyEosTitle(state, value) {
+    return {
+      ...state,
+      myEosTitle: value,
+    }
+  },
   setOpenModal(state, { modalId, openModalData }) {
     if (!state.modalOpen) {
       console.warn("Modal must be open to call setOpenModal!");

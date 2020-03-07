@@ -11,7 +11,7 @@ const AuthScatterWidget = ({ className, debugText, scatterAppName, coreInstance,
     if (firstRun === 1) {
       setFirstRun(0);
       coreInstance.wallet.loginWithScatter(scatterAppName)
-        .then(() => console.log("login"))
+        .then(() => 1)
         .catch(err => {
           console.error(err);
           setTimeout(() => setFirstRun(1), 600);

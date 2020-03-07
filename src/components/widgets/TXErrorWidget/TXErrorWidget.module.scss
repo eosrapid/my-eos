@@ -1,9 +1,22 @@
 .txErrorWidget {
-  font-size:inherit;
+  text-align: center;
+  padding: 8px 4px 18px 4px;
 
   :global {
-    span {
-      font-size:inherit;
+    .widgetMid {
+      text-align: center;
+    }
+    .errorMsg {
+      padding-top:12px;
+      font-size:12px;
+      text-align: center;
+      padding:6px;
+    }
+    .errorIconCon {
+      text-align: center;
+      svg {
+        display: inline-block;
+      }
     }
   }
 }

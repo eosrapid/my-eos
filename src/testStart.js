@@ -13,8 +13,8 @@ const EOS_JUNGLE_CFG = {
 };
 const myEOSInstance = myEOSCore.init({
   network: EOS_JUNGLE_CFG,
+  
 });
-
 myEOSInstance.login()
   .then((res) => {
     console.log("Login Result: ", res);
@@ -37,7 +37,6 @@ myEOSInstance.login()
         },
       }]
     };
-    console.log("tx", tx);
     return myEOSInstance.transact(tx, {
       blocksBehind: 3,
       expireSeconds: 30,

@@ -9,15 +9,14 @@ function modalIdForWalletType(newType) {
   return "w_" + newType;
 
 }
-const WalletPickerWidget = ({ className, coreInstance, setOpenModal }) => {
+const WalletPickerWidget = ({ className, coreInstance, setOpenModal, myEosTitle }) => {
   const onSelectWalletType = (newType) => {
-    console.log("new type=" + newType + "\nmidtype=" + modalIdForWalletType(newType));
     setOpenModal({ modalId: modalIdForWalletType(newType) });
   };
   return (
     <MEWidget className={classnames(walletPickerWidget, className)}>
       <div className="widgetTop">
-        <div className="widgetTitle">Login with <span className="myEOSTitle">myEOS</span></div>
+        <div className="widgetTitle">Login with <span className="myEOSTitle">{myEosTitle||"myEOS"}</span></div>
       </div>
 
       <div className="widgetMid">
@@ -44,11 +43,11 @@ const WalletPickerWidget = ({ className, coreInstance, setOpenModal }) => {
 
 export default connect(
   ({
-    debugText,
     coreInstance,
+    myEosTitle,
   }) => ({
-    debugText,
     coreInstance,
+    myEosTitle,
   }),
   actions
 )(WalletPickerWidget);

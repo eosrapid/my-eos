@@ -12,17 +12,19 @@
 ### HTML
 #### Add this to your header:
 ```html
-<link href="https://unpkg.com/my-eos@0.0.7/dist/my-eos.css" rel="stylesheet" />
+<link href="https://unpkg.com/my-eos@0.0.9/dist/my-eos.css" rel="stylesheet" />
 ```
 
 #### Add this to the body of your html before all other scripts
 ```html
-<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.7/dist/my-eos.umd.js"></script>
+<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.9/dist/my-eos.umd.js"></script>
 ```
 
 
 ## Usage (mainnet)
 ```javascript
+import MyEos from 'my-eos';
+
 const myEos = new MyEOS({
   network: {
     chainId: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
@@ -30,7 +32,8 @@ const myEos = new MyEOS({
     port: 443,
     protocol: 'https'
   },
-  scatterAppName: "Your app name here"
+  scatterAppName: "Your app name here",
+  appName: "MyApp"
 });
 
 const loginResponse = await myEos.login();
@@ -64,6 +67,8 @@ console.log("Transaction Result: ", txResult);
 
 ## Usage (Jungle Test Net)
 ```javascript
+import MyEos from 'my-eos';
+
 const myEos = new MyEOS({
   network: {
     chainId: 'e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473',
@@ -71,7 +76,8 @@ const myEos = new MyEOS({
     port: 443,
     protocol: 'https'
   },
-  scatterAppName: "Your app name here"
+  scatterAppName: "Your app name here",
+  appName: "MyApp"
 });
 
 const loginResponse = await myEos.login();
@@ -112,10 +118,10 @@ console.log("Transaction Result: ", txResult);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>MyEOS Jungle Test Net Example</title>
-  <link href="https://unpkg.com/my-eos@0.0.7/dist/my-eos.css" rel="stylesheet" />
+  <link href="https://unpkg.com/my-eos@0.0.9/dist/my-eos.css" rel="stylesheet" />
 </head>
 <body>
-<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.7/dist/my-eos.umd.js"></script>
+<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.9/dist/my-eos.umd.js"></script>
 <script type="text/javascript">
 const myEos = new MyEOS({
   network: {
@@ -124,7 +130,8 @@ const myEos = new MyEOS({
     port: 443,
     protocol: 'https'
   },
-  scatterAppName: "Your app name here"
+  scatterAppName: "Your app name here",
+  appName: "MyApp"
 });
 
 const loginResponse = myEos.login().then(()=>{
