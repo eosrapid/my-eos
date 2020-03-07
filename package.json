@@ -1,6 +1,6 @@
 {
   "name": "my-eos",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "An easy to use library for sending EOS transactions",
   "license": "MIT",
   "repository": "eosrapid/my-eos",
