@@ -1,8 +1,11 @@
+<p align="center"> 
+<img src="https://raw.githubusercontent.com/eosrapid/demo-images/master/my-eos/my-eos-demo.gif" alt="MyEOS Demo GIF" width="195" />
+</p>
+
 # MyEOS
 **MyEOS** is a javascript library that makes it fast and easy to build EOS dApps. 
 
 ## Demo
-![MyEOS Demo GIF](https://raw.githubusercontent.com/eosrapid/demo-images/master/my-eos/my-eos-demo.gif "MyEOS Demo")
 [Jungle Testnet Demo](https://cbgs8.csb.app)
 [Jungle Testnet Demo Code Sandbox](https://codesandbox.io/s/my-eos-demo-cbgs8)
 
