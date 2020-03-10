@@ -22,17 +22,18 @@
 ### HTML
 #### Add this to your header:
 ```html
-<link href="https://unpkg.com/my-eos@0.0.10/dist/my-eos.css" rel="stylesheet" />
+<link href="https://unpkg.com/my-eos@0.0.11/dist/my-eos.css" rel="stylesheet" />
 ```
 
 #### Add this to the body of your html before all other scripts
 ```html
-<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.10/dist/my-eos.umd.js"></script>
+<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.11/dist/my-eos.umd.js"></script>
 ```
 
 
 ## Usage (mainnet)
 ```javascript
+import "my-eos/dist/my-eos.css";
 import MyEOS from 'my-eos';
 
 const myEos = new MyEOS({
@@ -77,6 +78,7 @@ console.log("Transaction Result: ", txResult);
 
 ## Usage (Jungle Test Net)
 ```javascript
+import "my-eos/dist/my-eos.css";
 import MyEOS from 'my-eos';
 
 const myEos = new MyEOS({
@@ -128,10 +130,10 @@ console.log("Transaction Result: ", txResult);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>MyEOS Jungle Test Net Example</title>
-  <link href="https://unpkg.com/my-eos@0.0.10/dist/my-eos.css" rel="stylesheet" />
+  <link href="https://unpkg.com/my-eos@0.0.11/dist/my-eos.css" rel="stylesheet" />
 </head>
 <body>
-<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.10/dist/my-eos.umd.js"></script>
+<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.11/dist/my-eos.umd.js"></script>
 <script type="text/javascript">
 const myEos = new MyEOS({
   network: {
