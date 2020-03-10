@@ -1,6 +1,12 @@
 # MyEOS
 **MyEOS** is a javascript library that makes it fast and easy to build EOS dApps. 
 
+## Demo
+![MyEOS Demo GIF](https://raw.githubusercontent.com/eosrapid/demo-images/master/my-eos/my-eos-demo.gif "MyEOS Demo")
+[Jungle Testnet Demo](https://cbgs8.csb.app)
+[Jungle Testnet Demo Code Sandbox](https://codesandbox.io/s/my-eos-demo-cbgs8)
+
+
 ## Installation 
 
 ### NPM
@@ -12,18 +18,18 @@
 ### HTML
 #### Add this to your header:
 ```html
-<link href="https://unpkg.com/my-eos@0.0.9/dist/my-eos.css" rel="stylesheet" />
+<link href="https://unpkg.com/my-eos@0.0.10/dist/my-eos.css" rel="stylesheet" />
 ```
 
 #### Add this to the body of your html before all other scripts
 ```html
-<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.9/dist/my-eos.umd.js"></script>
+<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.10/dist/my-eos.umd.js"></script>
 ```
 
 
 ## Usage (mainnet)
 ```javascript
-import MyEos from 'my-eos';
+import MyEOS from 'my-eos';
 
 const myEos = new MyEOS({
   network: {
@@ -67,7 +73,7 @@ console.log("Transaction Result: ", txResult);
 
 ## Usage (Jungle Test Net)
 ```javascript
-import MyEos from 'my-eos';
+import MyEOS from 'my-eos';
 
 const myEos = new MyEOS({
   network: {
@@ -118,10 +124,10 @@ console.log("Transaction Result: ", txResult);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>MyEOS Jungle Test Net Example</title>
-  <link href="https://unpkg.com/my-eos@0.0.9/dist/my-eos.css" rel="stylesheet" />
+  <link href="https://unpkg.com/my-eos@0.0.10/dist/my-eos.css" rel="stylesheet" />
 </head>
 <body>
-<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.9/dist/my-eos.umd.js"></script>
+<script type="text/javascript" src="https://unpkg.com/my-eos@0.0.10/dist/my-eos.umd.js"></script>
 <script type="text/javascript">
 const myEos = new MyEOS({
   network: {
