@@ -8,7 +8,7 @@
 ## Demo
 [Jungle Testnet Demo](https://cbgs8.csb.app)
 
-[Jungle Testnet Demo Code Sandbox Source](https://codesandbox.io/s/my-eos-demo-cbgs8)
+[Jungle Testnet Demo (Source)](https://codesandbox.io/s/my-eos-demo-cbgs8)
 
 
 ## Installation 
