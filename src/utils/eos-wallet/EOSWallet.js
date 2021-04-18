@@ -3,6 +3,8 @@ import { SerialBuffer } from 'eosjs/dist/eosjs-serialize';
 import {arrayToHex} from "@/utils/binary";
 import ScatterJS from '@scatterjs/core';
 import ScatterEOS from '@scatterjs/eosjs2'
+import AnchorLink from 'anchor-link'
+import AnchorLinkBrowserTransport from 'anchor-link-browser-transport'
 
 import { JsSignatureProvider } from "eosjs/dist/eosjs-jssig";
 import { SIG_PROVIDERS, WALLET_EVENTS, LOGOUT_TYPES } from "./defs";
@@ -12,7 +14,7 @@ import {
   parseStringAuthorization,
   ensureArray
 } from "./helpers";
-
+const CLEAR_SESSION_ON_LOGIN = true;
 ScatterJS.plugins(new ScatterEOS());
 
 class EOSWallet {
@@ -107,6 +109,60 @@ class EOSWallet {
     ];
     this.rpc = rpc;
     this.api = eosApi;
+    this.transactFunc = (transaction, options) =>
+      this.api.transact(transaction, options);
+    this.eventManager.fireEvent(WALLET_EVENTS.LOGIN, {
+      authorizations: this.authorizations.concat([]),
+      sigProviderType: this.sigProviderType
+    });
+  }
+  async loginWithAnchorLink(appName) {
+    this.logout(LOGOUT_TYPES.NEW_LOGIN);
+    
+    const transport = new AnchorLinkBrowserTransport()
+    const link = new AnchorLink({
+      transport,
+      rpc: this.rpc,
+      chains: [
+        {
+          chainId: this.networkInfo.chainId,
+          nodeUrl: getRPCUrlForNetworkInfo(this.networkInfo),
+        },
+      ],
+    });
+    let session = null;
+    if(CLEAR_SESSION_ON_LOGIN){
+      await link.clearSessions(appName);
+    }else{
+      session = await link.restoreSession(appName);
+    }
+    if(!session){
+      const identity = await link.login(appName);
+      session = identity.session;
+    }
+    this.sigProviderType = SIG_PROVIDERS.ANCHOR_LINK;
+    this.authorizations = [
+      {
+        actor: session.auth.actor,
+        permission: session.auth.permission
+      }
+    ];
+    this.api = session;
+    this.eventManager.addPromiseListener(WALLET_EVENTS.LOGOUT, {}, (onReject)=>{
+      // if user logs out, we should not clear sessions
+    })
+    .then(({logoutType, authorizations})=>{
+      if(logoutType ===LOGOUT_TYPES.CLEAR_SESSION){
+        link.clearSessions(appName).then(()=>0)
+        .catch(err=>{
+          console.error("Error logging out anchor: ",err);
+        })
+      }
+    })
+    .catch(err=>{
+      console.error("Error adding promise listener for anchor: ",err);
+    });
+
     this.transactFunc = (transaction, options) =>
       this.api.transact(transaction, options);
     this.eventManager.fireEvent(WALLET_EVENTS.LOGIN, {

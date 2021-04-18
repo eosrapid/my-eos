@@ -12,6 +12,13 @@ const reducers = (store) => ({
       scatterAppName: value,
     }
   },
+  setAnchorAppName(state, value) {
+
+    return {
+      ...state,
+      anchorAppName: value,
+    }
+  },
   setMyEosTitle(state, value) {
     return {
       ...state,

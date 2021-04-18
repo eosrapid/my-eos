@@ -1,7 +1,7 @@
 import React from "react";
 import { walletPicker } from "./WalletPicker.module.scss";
 import classnames from "classnames";
-import {ImTokenIcon, KeyIcon, ScatterIcon, TokenPocketIcon} from '@/components/SVGIcons';
+import {AnchorIcon, KeyIcon, ScatterIcon, TokenPocketIcon} from '@/components/SVGIcons';
 
 import WalletPickerItem from "./WalletPickerItem";
 const WALLET_DEFS = [
@@ -10,10 +10,16 @@ const WALLET_DEFS = [
     label: "Scatter",
     svgIcon: ScatterIcon,
   },
+  /*
   {
     id: "imtoken",
     label: "imToken",
     svgIcon: ImTokenIcon,
+  },*/
+  {
+    id: "anchor",
+    label: "Anchor",
+    svgIcon: AnchorIcon,
   },
   {
     id: "tokenpocket",

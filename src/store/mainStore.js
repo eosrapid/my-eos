@@ -6,6 +6,7 @@ const initialState = {
   modalId: "",
   debugText: "",
   scatterAppName: "MyEOS Widget Demo",
+  anchorAppName: "myeoswidget",
   myEosTitle: "myEOS",
 }
 const store = createStore(initialState);

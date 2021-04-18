@@ -1,18 +1,23 @@
 import * as myEOSCore from '@/core';
+/*
 const EOS_MAINNET_CFG = {
   chainId: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
   host: 'api.eosrapid.com',
   port: 443,
   protocol: 'https'
 };
+*/
 const EOS_JUNGLE_CFG = {
-  chainId: 'e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473',
-  host: 'api.jungle.alohaeos.com',
+  chainId: '2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840',
+  host: 'api.jungle3.alohaeos.com',
   port: 443,
   protocol: 'https'
 };
 const myEOSInstance = myEOSCore.init({
   network: EOS_JUNGLE_CFG,
+  scatterAppName: "TestMYEOS",
+  anchorAppName: "testmyeos",
+  appName: "testmyeos"
   
 });
 myEOSInstance.login()

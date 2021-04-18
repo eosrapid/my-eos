@@ -10,10 +10,19 @@ function MyEOS(options={}){
       boundActions.setMyEosTitle(options.scatterAppName);
     }
   }
+  if(typeof options.anchorAppName==='string') {
+    boundActions.setAnchorAppName(options.anchorAppName);
+    if(!options.appName && !options.scatterAppName) {
+      boundActions.setMyEosTitle(options.anchorAppName);
+    }
+  }
   if(typeof options.appName==='string') {
     boundActions.setMyEosTitle(options.appName);
     if(!options.scatterAppName) {
       boundActions.setScatterAppName(options.appName);
+    }
+    if(!options.anchorAppName) {
+      boundActions.setAnchorAppName(options.appName);
     }
   }
   let conElem = options.container;

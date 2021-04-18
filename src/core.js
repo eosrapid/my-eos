@@ -1,6 +1,6 @@
 import {EOSWallet} from '@/utils/eos-wallet/EOSWallet';
 import {boundActions, store} from '@/store';
-import {WALLET_EVENTS, SKIPPABLE_MODALS} from '@/utils/eos-wallet/defs';
+import {WALLET_EVENTS, SKIPPABLE_MODALS, LOGOUT_TYPES} from '@/utils/eos-wallet/defs';
 
 class CoreMyEOS {
   constructor(options={}){
@@ -58,7 +58,11 @@ class CoreMyEOS {
   }
   reset() {
     boundActions.closeModal();
-    this.wallet.logout();
+    this.wallet.logout(LOGOUT_TYPES.CLEAR_SESSION);
+  }
+  logoutClearSession(){
+    this.wallet.logout(LOGOUT_TYPES.CLEAR_SESSION);
+
   }
   init(options) {
     this.options = options;

@@ -1,7 +1,8 @@
 export const SIG_PROVIDERS = {
   NONE: 1,
   PRIVATE_KEY: 2,
-  SCATTER: 3
+  SCATTER: 3,
+  ANCHOR_LINK: 4,
 };
 
 export const WALLET_EVENTS = {
@@ -21,5 +22,6 @@ export const SKIPPABLE_MODALS = [
 
 export const LOGOUT_TYPES = {
   STANDARD: 0,
-  NEW_LOGIN: 1
+  NEW_LOGIN: 1,
+  CLEAR_SESSION: 2,
 };
