@@ -55,10 +55,7 @@ const txObject = {
   actions: [{
     account: 'eosio.token',
     name: 'transfer',
-    authorization: [{
-      actor: authorization.actor,
-      permission: authorization.permission,
-    }],
+    authorization,
     data: {
       from: authorization.actor,
       to: 'eosrapidprod',
@@ -101,10 +98,7 @@ const txObject = {
   actions: [{
     account: 'eosio.token',
     name: 'transfer',
-    authorization: [{
-      actor: authorization.actor,
-      permission: authorization.permission,
-    }],
+    authorization,
     data: {
       from: authorization.actor,
       to: 'lioninjungle',
@@ -155,10 +149,7 @@ const loginResponse = myEos.login().then(()=>{
     actions: [{
       account: 'eosio.token',
       name: 'transfer',
-      authorization: [{
-        actor: authorization.actor,
-        permission: authorization.permission,
-      }],
+      authorization,
       data: {
         from: authorization.actor,
         to: 'lioninjungle',
